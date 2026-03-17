@@ -1,0 +1,23 @@
+int sensor=2;
+int buzzer=3;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(sensor,INPUT);
+  pinMode(buzzer,OUTPUT);
+}
+void loop()
+{
+int val=digitalRead(sensor);
+if(val==1)
+{
+  digitalWrite(buzzer,1);
+  Serial.println("Changes Detected");
+ }
+ else
+ {
+   digitalWrite(buzzer,0);
+   Serial.println("No Changes Occur");
+ }
+}
+  
